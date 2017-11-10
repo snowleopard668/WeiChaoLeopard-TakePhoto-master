@@ -1,0 +1,131 @@
+apply plugin: 'com.android.library'
+
+//添加以下两个插件
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
+
+//你的library版本号,+0.1为大改动，即添加新功能，+0.01的话就是小改动，修改每个utils中功能
+//version = "1.0.2"
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //增加lint选项，不加的话下面上传到jCenter有可能会报错
+    lintOptions {
+        abortOnError false
+    }
+}
+
+////你的library的地址
+//def siteUrl = 'https://github.com/crazyandcoder/TakePhoto'
+//def gitUrl = 'https://github.com/crazyandcoder/TakePhoto.git'
+//def issueUrl = 'https://github.com/crazyandcoder/TakePhoto/issues'
+//
+////这个蛮重要的，你上传到jCenter后一些文件存放的路径，如果不写或者写错了的话
+////可以不会产生pom文件，后面上传到jCenter后会报错，这个问题我搞了一下午！
+//group = "liji.library.dev"
+//install {
+//    repositories.mavenInstaller {
+//        // POM.xml文件内容
+//        pom {
+//            project {
+//                packaging 'aar'
+//                // 添加描述，不重要
+//                name 'android utils'
+//                url siteUrl
+//                // 协议
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id 'liji' //your user ID
+//                        name 'liji' //your name
+//                        email 'lijiwork@sina.com' //your email
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//                }
+//            }
+//        }
+//    }
+//}
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//
+//
+//task javadoc(type: Javadoc) {
+//
+//    //增加编码，这行很重要，如果是windows系统，同时如果在代码中有中文的话，不加这行，上传会报错
+//    options.encoding = "utf-8"
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//artifacts {
+//    archives javadocJar
+//    archives sourcesJar
+//}
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+//    configurations = ['archives']
+//    pkg {
+//        //发布到Bintray的哪个仓库
+//        repo = "maven"
+//        //发布到Bintray上的名字
+//        name = "takephoto"
+//        //项目描述
+//        desc = "take photo"
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        issueTrackerUrl = issueUrl
+//        licenses = ["Apache-2.0"]
+//        //标签
+//        labels = ['android']
+//        publish = true
+//        publicDownloadNumbers = true
+//    }
+//}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    //    compile 'cn.finalteam:galleryfinal:1.4.8.7'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile project(':galleryfinal')
+}
