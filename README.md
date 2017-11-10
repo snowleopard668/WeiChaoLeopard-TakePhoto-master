@@ -6,7 +6,7 @@
 
 
 ### github地址
-[欢迎star、fork，点击跳转 https://github.com/crazyandcoder/TakePhoto](https://github.com/crazyandcoder/TakePhoto)
+[欢迎star、fork，点击跳转 https://github.com/flyingsnowtiger/](https://github.com/flyingsnowtiger/)
 
 
 ### 效果演示
@@ -17,26 +17,25 @@
 http://upload-images.jianshu.io/upload_images/676457-2cf2314875fb6ef8.gif?imageMogr2/auto-orient/strip
 
 ### 主要亮点
-
+ 注:主要是在使用原来作者项目过程中,安卓7.0+的项目拍照闪退, 所以将原项目下载后修改重新上传,感谢原项目作者liji
  1. 可以进行拍照或者从本地相册获取图片
  2. 可以对已经选中的图片进行编辑、如裁剪、放大、缩小等操作
  3. 直接返回选中图片的地址，方便后续操作，如上传服务器等。
 
-### v1.0.2 版本（2016.10.26）
+### v1.1.1版本（2017.11.10）
 
 
-![](http://img.blog.csdn.net/20161026140852254)
 
 [从fir获取demo演示apk](http://fir.im/fykm)
 
 ### gradle引用
 
 ```
-compile 'liji.library.dev:takephotolib:1.0.2'
+compile 'com.github.flyingsnowtiger:WeiChaoLeopard-TakePhoto-master:1.1.6'
 ```
 
 
-### 代码示例（v1.0.2）
+### 代码示例（v1.1.1）
 
 ```
 	  TakePhoto takePhoto = new TakePhoto(MainActivity.this);
@@ -59,9 +58,9 @@ compile 'liji.library.dev:takephotolib:1.0.2'
 
 **关于作者**
 
-QQ：        275137657 
-github：   https://github.com/crazyandcoder 
-个人博客：http://crazyandcoder.github.io/
+QQ：        2431360544
+github：   https://github.com/flyingsnowtiger/
+个人博客：http://blog.csdn.net/flyingsnowtiger
 
 
 ### 感谢
@@ -70,3 +69,4 @@ github：   https://github.com/crazyandcoder
  - [ActionSheet](https://github.com/baoyongzhang/android-ActionSheet)
  - [glide](https://github.com/bumptech/glide) 
  - [universalimageloader](https://github.com/nostra13/Android-Universal-Image-Loader)
+ - https://github.com/crazyandcoder
