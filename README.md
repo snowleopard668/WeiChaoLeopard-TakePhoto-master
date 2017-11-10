@@ -35,7 +35,7 @@ compile 'com.github.flyingsnowtiger:WeiChaoLeopard-TakePhoto-master:1.1.6'
 ```
 
 
-### 代码示例（v1.1.1）
+### 代码示例（v1.1.6）
 
 ```
 	  TakePhoto takePhoto = new TakePhoto(MainActivity.this);
