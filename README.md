@@ -29,6 +29,14 @@ http://upload-images.jianshu.io/upload_images/676457-2cf2314875fb6ef8.gif?imageM
 [从fir获取demo演示apk](http://fir.im/fykm)
 
 ### gradle引用
+```
+自己项目的gradle中增加
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+```
+
+
 
 ```
 compile 'com.github.flyingsnowtiger:WeiChaoLeopard-TakePhoto-master:1.1.6'
